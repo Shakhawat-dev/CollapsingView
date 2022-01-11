@@ -9,8 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(spacing: 0) {
+            HStack {
+                Text("Its a collapsible content view")
+                Spacer()
+            }
+            .padding(.bottom)
+            
+            Divider()
+                .padding(.bottom)
+            
+            Collapsible {
+                Text("Collapsible")
+            } content: {
+                HStack {
+                    Text("Content")
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            
+            Spacer()
+
+        }
     }
 }
 
